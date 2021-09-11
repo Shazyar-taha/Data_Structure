@@ -1,6 +1,8 @@
+package com.geekplanet.shazyar;
+
 import java.util.Arrays;
 
-public class BubbleSort {
+public class SelectionSort {
 
     public static void main(String[] args) {
 
@@ -10,19 +12,23 @@ public class BubbleSort {
         System.out.println("Before Sort The Array : "+ Arrays.toString(array));
 
         //sorting the array
-        bubbleSort(array);
+        selectionSort(array);
 
         //after sort the array
         System.out.println("After Sort The Array : "+Arrays.toString(array));
     }
 
-    private static void bubbleSort(int[] array){
-        for(int lastIndex = array.length -1; lastIndex > 0; lastIndex--){
-            for (int i = 0; i < lastIndex; i++) {
-                if(array[i] > array[i+1]){
-                    swap(array, i, i+1);
+    private static void selectionSort(int[] array){
+        for(int lastUnsortIndex = array.length -1; lastUnsortIndex > 0; lastUnsortIndex--){
+
+            int largest = 0;
+
+            for(int i = 1; i <= lastUnsortIndex; i++){
+                if (array[i] > array[largest]){
+                    largest = i;
                 }
             }
+            swap(array, largest, lastUnsortIndex);
         }
     }
 
