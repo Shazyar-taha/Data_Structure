@@ -1,5 +1,3 @@
-package com.geekplanet.shazyar;
-
 import java.util.Arrays;
 
 public class SelectionSort {
